@@ -1,0 +1,312 @@
+/*  Font face */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Common CSS  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+html {
+  font-size: 62.5%;
+}
+/* Common CSS Ends  */
+
+/* Section 1 CSS */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.section-heading {
+  font-size: 12rem;
+  text-transform: capitalize;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+}
+.section-1-icons i {
+  font-size: 30rem;
+  color: #a79a2d;
+  text-shadow: 0.2rem 0.2rem 0.2rem #000;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s;
+}
+.section-1-icons i.change {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s 0.3s;
+}
+
+/* Section 1 CSS  ends*/
+
+/* Section 2 CSS Starts */
+
+.section-2 {
+  width: 100%;
+  height: 100vh;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rem 0rem;
+}
+/* Section 2 CSS Ends */
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 3rem;
+  
+}
+.card {
+  width: 25rem;
+  background-color: #a79a2d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem ;
+  box-shadow: 1rem 1rem 1rem #000;
+  position: relative;
+  transform: rotateY(20deg) skewX(-2deg);
+  transition: transform 0.5s, box-shadow 0.5s;
+ 
+}
+.card:hover{
+  transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+  box-shadow: 2rem 2rem 2rem #000;
+  
+}
+
+/*   card 3d CSS  */
+
+.card::before{
+    content: " ";
+    height: 100%;
+    width: 1rem;
+    background-color: #817824;
+    position: absolute;
+    top: 0px;
+    left: -1rem;
+    transform: skewY(45deg);
+    transform-origin: right;
+    box-shadow: -1rem -1rem 1rem #000;
+}
+
+.card::after{
+    content: " ";
+    height: 1rem;
+    width: 100%;
+    background-color: #8f8317;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+    box-shadow: -1rem -1rem 1rem #000;
+}
+.card-img {
+  width: 100%;
+}
+.card-title {
+    font-size: 4rem;
+    letter-spacing: .5rem;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #111;
+    margin: 2rem 0rem;
+}
+
+.card-btn {
+    background: #111;
+    color: #888;
+    border-radius: 5rem;
+    width: 70%;
+    cursor: pointer;
+    letter-spacing: .2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    box-shadow: -.2rem -.2rem .2rem #000;
+}
+
+/* CSS for Section 3 Starts */
+.section-3{
+  background-color: #333;
+  padding: 5rem 0; 
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3rem;
+}
+.gallery-link {
+  position: relative;
+  padding: 4rem 1rem;
+}
+.gallery-link::before {
+  content: "";
+  position: absolute;
+  top: 2vw;
+  left: 80%;
+  width: 0.2rem;
+  height: 0;
+  background-color: #fff;
+  z-index: 10;
+  transition: height 0.5s;
+}
+
+.gallery-link::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 2rem;
+  width: 0;
+  height: 0.2rem;
+  background-color: #fff;
+  transition: width 0.5s;
+}
+.gallery-link:hover::before {
+  height: 80%;
+}
+
+.gallery-link:hover::after {
+  width: 90%;
+}
+.food-img {
+  width: 24vw;
+  height: 15vw;
+  object-fit: cover;
+  box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
+    0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999;
+    transition: all .5s;
+}
+.gallery-link:hover .food-img {
+  box-shadow: 1rem 1rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946,
+    3rem 3rem 0.1rem #297ce9, 4rem 4rem 0.1rem #e92999;
+  transform: scale(1.1);
+  filter: blur(0.5rem);
+  opacity: 0.5;
+}
+
+.food-name {
+  position: absolute;
+  top: 5rem;
+  left: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+.gallery-link:hover .food-name {
+  width: 100%;
+  transition: width 1.5s 0.5s;
+}
+
+.food-description {
+  position: absolute;
+  bottom: 5.5vw;
+  left: 2rem;
+  width: 70%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.gallery-link:hover .food-description {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s 1s;
+}
+
+/* CSS for Section 3 Ends */
+
+/* CSS for footer Section Starts */
+
+footer {
+
+  width: 100%;
+  height: 30vh;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  color: #fff;
+
+
+}
+
+.part-2{
+  background-color: #111;
+  width: 100%;
+  padding: 15px 0px;
+  text-align: center;
+}
+
+.part-1{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ 
+}
+
+.footer-heading {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #a79a2d;
+}
+.footer-des{
+  font-size: 1.5rem;
+  color: #888;
+}
+.email-input {
+  width: 35rem;
+  height: 5rem;
+  padding: 1rem;
+  border: 0.2rem solid #a79a2d;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #a79a2d;
+}
+.signup-form-input::placeholder {
+  color: #a79a2d;
+}
+.sign-up-form-btn {
+  position: relative;
+  left: -4.5rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: #333;
+  color: #a79a2d;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* CSS for footer Section Ends */
