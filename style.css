@@ -133,6 +133,7 @@ html {
 }
 .section-heading {
   font-size: 12rem;
+  font-weight: 900;
   text-transform: capitalize;
   color: #fff;
   text-align: center;
